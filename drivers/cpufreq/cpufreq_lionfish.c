@@ -358,7 +358,7 @@ static void lf_dbs_timer(struct work_struct *work)
 	bool modify_all = true;
 
 	mutex_lock(&core_dbs_info->cdbs.timer_mutex);
-	if (!need_load_eval(&core_dbs_info->cdbs, lf_tuners->sampling_rate))
+	if (&core_dbs_info->cdbs, lf_tuners->sampling_rate)
 		modify_all = false;
 	else
 		lf_check_cpu(dbs_data, cpu);
